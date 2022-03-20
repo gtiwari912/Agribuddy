@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginEnd="7dp"
+    android:layout_marginRight="7dp"
+    android:maxHeight="400dp"
+    android:maxWidth="310dp"
+    android:minHeight="30dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_receiver"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="lorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnum
+lorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnum
+lorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnumlorem ispem satnum"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_speak"/>
+
+
+</LinearLayout>
