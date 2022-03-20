@@ -21,15 +21,15 @@ public class MainActivity extends AppCompatActivity {
 ImageView b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("tag912", "level1");
+//        Log.d("tag912", "level1");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d("tag912", "level2");
+//        Log.d("tag912", "level2");
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
         Glide.with(this).asGif().load(R.drawable.giphy22).into(imageView);
 
-        Log.d("tag912", "level3");
+//        Log.d("tag912", "level3");
         ImageView imageView4 = (ImageView) findViewById(R.id.imageView4);
         Glide.with(this).asGif().load(R.drawable.taphere).into(imageView4);
     }

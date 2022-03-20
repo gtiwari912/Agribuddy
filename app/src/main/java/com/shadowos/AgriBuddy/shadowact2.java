@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -24,8 +25,11 @@ public class shadowact2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("tag912", "level1");
         super.onCreate(savedInstanceState);
+        Log.d("tag912", "level2");
         setContentView(com.shadowos.agrifarm.R.layout.activity_shadowact2);
+        Log.d("tag912", "level3");
         ImageView imageView = (ImageView) findViewById(R.id.imageView3);
         Glide.with(this).asGif().load(R.drawable.giphy3).into(imageView);
 //        webView = (WebView) findViewById(R.id.wewewew);
