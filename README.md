@@ -2,7 +2,9 @@
 
 An app to provide information to farmers related to agricultural news, schemes and proper use of pesticides and fertilizers with multilingual chat assistant.
 ## Screenshots
-<img src="https://github.com/gtiwari912/Agribuddy/blob/master/ss1.jpeg" width="275" height="500"> <img src="https://github.com/gtiwari912/Agribuddy/blob/master/ss2.jpeg" width="275" height="500">
+<img src="https://github.com/gtiwari912/Agribuddy/blob/master/1.png" width="275" height="500"> <img src="https://github.com/gtiwari912/Agribuddy/blob/master/2.png" width="275" height="500"> <img src="https://github.com/gtiwari912/Agribuddy/blob/master/3.png" width="275" height="500"> <img src="https://github.com/gtiwari912/Agribuddy/blob/master/4.png" width="275" height="500">
+
+
 
 ## Installation
 
