@@ -12,6 +12,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.shadowos.AgriBuddy.ChatFunction.ChatActivity;
 import com.shadowos.agrifarm.R;
 import com.shadowos.AgriBuddy.shadowact4;
 import com.shadowos.AgriBuddy.shadowact5;
@@ -52,8 +53,11 @@ public class shadowact2 extends AppCompatActivity {
     public void infopesticides(View view) {
         Intent intent = new Intent(this, shadowact5.class);
         startActivity(intent);
+    }
 
-
+    public void startChat(View view){
+        Intent intent = new Intent(this, ChatActivity.class);
+        startActivity(intent);
     }
 
     public void infofertilisers(View view) {
