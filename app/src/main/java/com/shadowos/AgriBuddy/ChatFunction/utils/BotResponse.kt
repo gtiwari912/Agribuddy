@@ -15,6 +15,14 @@ object BotResponse {
 
         return when {
 
+            // temperature
+            message.contains("temperture") || message.contains("temperature") -> {
+                val r = (0..1).random()
+                val result = if (r == 0) "heads" else "tails"
+
+                "Current termperature in Palghar region is 31 degree Celcius"
+            }
+
             //Flips a coin
             message.contains("flip") && message.contains("coin") -> {
                 val r = (0..1).random()
@@ -68,8 +76,24 @@ object BotResponse {
                 OPEN_GOOGLE
             }
 
+            //what is pesticides
+            message.contains("what")
+                    && (message.contains("are") || message.contains("is"))
+                    && (message.contains("pesticides") || message.contains("pesticide")) -> {
+                        "Pesticides are any substance used to keep various harmful plants and animals away from your crops."
+                    }
+
+            //what factors affent crop production
+            message.contains("what")
+                    && (message.contains("factors") || message.contains("factor"))
+                    && (message.contains("effect") || message.contains("affect"))
+                    && message.contains("crop") -> {
+                        "Factors such as Water, Nutrients, Water availablity, climate etc. afftect the crop production."
+                    }
             //Search on the internet
-            message.contains("search")-> {
+            message.contains("search") || message.contains("what")
+                    || message.contains("where")  || message.contains("which")
+                    || message.contains("when") || message.contains("how")-> {
                 OPEN_SEARCH
             }
 

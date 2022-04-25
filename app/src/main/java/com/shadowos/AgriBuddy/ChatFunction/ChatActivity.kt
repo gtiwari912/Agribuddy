@@ -12,8 +12,13 @@ package com.shadowos.AgriBuddy.ChatFunction
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
+import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import  com.shadowos.agrifarm.R
 //import com.codepalace.chatbot.R
@@ -27,8 +32,9 @@ import com.shadowos.AgriBuddy.ChatFunction.utils.Time
 import kotlinx.android.synthetic.main.activity_chat2.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
+import java.util.*
 
-class ChatActivity : AppCompatActivity() {
+class ChatActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private val TAG = "MainActivity"
 
     //You can ignore this messageList if you're coming from the tutorial,
@@ -36,7 +42,8 @@ class ChatActivity : AppCompatActivity() {
     var messagesList = mutableListOf<Message>()
 
     private lateinit var adapter: MessagingAdapter
-    private val botList = listOf("Peter", "Francesca", "Luigi", "Igor")
+    private var tts: TextToSpeech? = null
+    private val botList = listOf("Agni", "Vayu", "Prithvi", "Dharti")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +55,7 @@ class ChatActivity : AppCompatActivity() {
 
         val random = (0..3).random()
         customBotMessage("Hello! Today you're speaking with ${botList[random]}, how may I help?")
+        tts = TextToSpeech(this,this)
     }
 
     private fun clickEvents() {
@@ -104,6 +112,14 @@ class ChatActivity : AppCompatActivity() {
         }
     }
 
+    public fun speak(view: View){
+        var myView: TextView = view as TextView
+        var msg : String = myView.text as String;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            tts!!.speak(msg, TextToSpeech.QUEUE_FLUSH, null, "")
+        };
+    }
+
     private fun botResponse(message: String) {
         val timeStamp = Time.timeStamp()
 
@@ -154,6 +170,21 @@ class ChatActivity : AppCompatActivity() {
 
                 rv_messages.scrollToPosition(adapter.itemCount - 1)
             }
+        }
+    }
+
+
+    override fun onInit(status: Int){
+        Log.d("tag912", "came in onInit func")
+        if(status == TextToSpeech.SUCCESS){
+            Log.d("tag912", "status is success")
+            var result = tts!!.setLanguage(Locale.ENGLISH);
+            if(result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                Log.d("tag912", "Lang not supported")
+            }
+        }
+        else{
+            Log.d("tag912", "tts not initialized")
         }
     }
 }

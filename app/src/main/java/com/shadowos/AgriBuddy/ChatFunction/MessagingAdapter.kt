@@ -2,6 +2,8 @@ package com.shadowos.AgriBuddy.ChatFunction
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Build
+import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,19 +17,33 @@ import com.shadowos.AgriBuddy.ChatFunction.utils.Constants.RECEIVE_ID
 //import com.codepalace.chatbot.utils.Constants.RECEIVE_ID
 import com.shadowos.AgriBuddy.ChatFunction.utils.Constants.SEND_ID
 import kotlinx.android.synthetic.main.message_item.view.*
+import java.util.*
 
-class MessagingAdapter: RecyclerView.Adapter<MessagingAdapter.MessageViewHolder>() {
+class MessagingAdapter: RecyclerView.Adapter<MessagingAdapter.MessageViewHolder>(){
 
     var messagesList = mutableListOf<Message>()
+    private lateinit  var tts: TextToSpeech
 
-    inner class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         init {
-            itemView.setOnClickListener {
+            var a : String = "ad"
+//            itemView.setOnClickListener {
+
+//                var msg : Message = messagesList.get(adapterPosition);
+//                var textToBeRead: String = msg.message;
+//                Log.d("tag912", "extracted text to be spoken")
+//                tts = TextToSpeech(itemView.context, this);
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                    Log.d("tag912", "going to speak: $textToBeRead")
+//                    tts.speak(textToBeRead, TextToSpeech.QUEUE_FLUSH, null, "")
+//                };
+
+
 
                 //Remove message on the item clicked
-                messagesList.removeAt(adapterPosition)
-                notifyItemRemoved(adapterPosition)
-            }
+//                messagesList.removeAt(adapterPosition)
+//                notifyItemRemoved(adapterPosition)
+//            }
         }
     }
 
@@ -67,5 +83,6 @@ class MessagingAdapter: RecyclerView.Adapter<MessagingAdapter.MessageViewHolder>
         this.messagesList.add(message)
         notifyItemInserted(messagesList.size)
     }
+
 
 }
